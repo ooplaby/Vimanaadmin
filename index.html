@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimana Admin Panel - Minimal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="appContainer">
+        <!-- ========== Authentication Section ========== -->
+        <div id="authSection" class="section">
+            <h2>Admin Authentication</h2>
+            <div class="form-container">
+                <h3>Login</h3>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button id="loginButton">Login</button>
+                <p id="loginError" class="feedback-message error"></p>
+            </div>
+            
+            <hr class="separator">
+
+            <div class="form-container">
+                <h3>Admin Signup</h3>
+                <p class="info-text">(Use only if setting up a new admin or if you have the master admin secret)</p>
+                <input type="email" id="signupEmail" placeholder="New Admin Email" required>
+                <input type="password" id="signupPassword" placeholder="New Admin Password" required>
+                <input type="text" id="signupSecret" placeholder="Admin Secret Key" required>
+                <button id="signupButton">Signup Admin</button>
+                <p id="signupError" class="feedback-message error"></p>
+            </div>
+        </div>
+
+        <!-- ========== Main Admin Panel (Hidden by default) ========== -->
+        <div id="adminPanelSection" class="section" style="display: none;">
+            <header class="panel-header">
+                <h2>Vimana Admin Dashboard</h2>
+                <button id="logoutButton">Logout</button>
+            </header>
+            
+            <hr class="separator">
+
+            <!-- File Upload Section -->
+            <div class="panel-subsection">
+                <h3>Document Management</h3>
+                <div class="upload-area">
+                    <h4>Upload General Knowledge Document</h4>
+                    <input type="file" id="generalFile" class="file-input" accept=".txt,.pdf,.md,.docx">
+                    <button id="uploadGeneralButton">Upload General Doc</button>
+                    <p id="generalUploadStatus" class="feedback-message"></p>
+                </div>
+                <div class="upload-area">
+                    <h4>Upload Specification Document</h4>
+                    <input type="file" id="specFile" class="file-input" accept=".txt,.pdf,.md,.docx">
+                    <button id="uploadSpecButton">Upload Spec Doc</button>
+                    <p id="specUploadStatus" class="feedback-message"></p>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <!-- Chatbot Interaction Section (Admin's own chat with bot) -->
+            <div class="panel-subsection">
+                <h3>Chat with VimanaBot (Your Current Chat)</h3>
+                <div class="chat-controls">
+                    <button id="initChatButton">Initialize New Chat Session</button>
+                    <span id="currentChatIdDisplay" class="info-text">Current Chat ID: None</span>
+                </div>
+                
+                <div id="chatHistoryDisplay" class="chat-history-area">
+                    <!-- Chat messages will be dynamically inserted here by JavaScript -->
+                </div>
+                
+                <div class="chat-input-area">
+                    <input type="text" id="chatMessageInput" placeholder="Type your message to VimanaBot...">
+                    <button id="sendChatMessageButton">Send</button>
+                </div>
+                <p id="chatUserStatus" class="feedback-message"></p>
+            </div>
+
+            <hr class="separator">
+            
+            <!-- Admin: Chat Management Section -->
+            <div class="panel-subsection">
+                <h3>Admin: Chat Management</h3>
+
+                <!-- Load All Chat Summaries -->
+                <div class="admin-chat-control-area">
+                    <h4>View All Chat Summaries</h4>
+                    <button id="loadAllChatsButton">Load All Chat Summaries</button> 
+                    <div id="allChatsList" class="admin-chat-list">
+                        <!-- List of chat summaries will appear here -->
+                    </div>
+                </div>
+
+                <!-- Load Specific Chat History by ID (Manual Input) -->
+                <div class="admin-chat-control-area" style="margin-top: 20px;">
+                    <h4>View Specific Chat History by ID</h4>
+                    <div class="chat-controls"> 
+                        <input type="number" id="adminChatIdInput" placeholder="Enter Chat ID">
+                        <button id="adminLoadChatHistoryButton">Load History for ID</button>
+                    </div>
+                </div>
+                
+                <!-- Display Area for Selected/Specific Chat History (from summary list or manual input) -->
+                <div id="adminSelectedChatHistoryDisplay" class="chat-history-area" style="margin-top: 10px;">
+                    <h4 id="adminSelectedChatTitle">Selected Chat History (ID: <span id="adminLoadedChatId">N/A</span>)</h4>
+                    <div id="adminChatMessagesDisplay">
+                        <!-- Specific chat messages will appear here -->
+                    </div>
+                </div>
+                <p id="adminChatViewStatus" class="feedback-message"></p>
+            </div>
+
+        </div> <!-- End of adminPanelSection -->
+    </div> <!-- End of appContainer -->
+
+    <script src="js/main.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/panel.js"></script>
+        <script src="js/chat.js"></script>
+</body>
+</html>
