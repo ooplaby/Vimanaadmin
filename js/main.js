@@ -15,7 +15,7 @@ var specFileInput, uploadSpecButton, specUploadStatusP;
 var initChatButton, currentChatIdDisplaySpan, chatHistoryDisplayDiv, chatMessageInput, sendChatMessageButton, chatUserStatusP;
 var adminChatIdInput, adminLoadChatHistoryButton, adminSelectedChatHistoryDisplayDiv, adminChatMessagesDisplayDiv, adminChatViewStatusP, adminLoadedChatId;
 var loadAllChatsButton, allChatsListDiv;
-
+var loadContactRequestsButton, contactRequestsListDiv, contactRequestsStatusP;
 document.addEventListener('DOMContentLoaded', () => {
     // Cache ALL DOM Elements
     authSection = document.getElementById('authSection');
@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     specFileInput = document.getElementById('specFile');
     uploadSpecButton = document.getElementById('uploadSpecButton');
     specUploadStatusP = document.getElementById('specUploadStatus');
+
+    loadContactRequestsButton = document.getElementById('loadContactRequestsButton');
+    contactRequestsListDiv = document.getElementById('contactRequestsList');
+    contactRequestsStatusP = document.getElementById('contactRequestsStatus');
     
     initChatButton = document.getElementById('initChatButton');
     currentChatIdDisplaySpan = document.getElementById('currentChatIdDisplay');
