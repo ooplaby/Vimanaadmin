@@ -181,7 +181,7 @@ function escapeHTML(str) {
             '<': '<',
             '>': '>',
             '"': '"',
-            "'": '''
+            "'": '&apos;'
         }[match];
     });
 }
