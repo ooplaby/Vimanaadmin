@@ -249,3 +249,62 @@ button:hover {
 #adminChatViewStatus.feedback-message { /* Ensure admin feedback also has min-height */
     min-height: 1.2em;
 }
+
+/* Contact Requests Display Area Styling */
+.contact-requests-display-area {
+    margin-top: 10px;
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.contact-requests-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-requests-ul li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff; /* Give each item a white background */
+    margin-bottom: 8px; /* Space between items */
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.contact-requests-ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.contact-request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.contact-request-header strong {
+    color: #2c3e50;
+}
+
+.contact-request-date {
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
+.contact-request-message {
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.5;
+}
+
+.contact-request-message p {
+    margin: 0;
+    white-space: pre-wrap; /* Preserve newlines from the message */
+}
